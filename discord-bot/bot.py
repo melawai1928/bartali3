@@ -351,7 +351,11 @@ async def cscase(interaction: discord.Interaction, nama: str = ""):
 @client.tree.command(name="cs", description="Ping role CS2")
 async def cs(interaction: discord.Interaction):
     role_id = 1208307952935505940
-    await interaction.response.send_message(f"<@&{role_id}> buruan login bangsat")
+    allowed_mentions = discord.AllowedMentions(roles=True)
+    await interaction.response.send_message(
+        f"<@&{role_id}> buruan login bangsat",
+        allowed_mentions=allowed_mentions
+    )
 
 
 # ─── Run ──────────────────────────────────────────────────────────────────────
